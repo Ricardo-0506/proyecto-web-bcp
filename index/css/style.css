@@ -1,0 +1,104 @@
+/* Color de barra superior */
+.bg-bcp {
+  background-color: #0033A0 !important;
+}
+
+/* Suavizar desplazamiento */
+html {
+  scroll-behavior: smooth;
+}
+
+/* BANNER PRINCIPAL */
+.banner {
+  position: relative;
+  height: 100vh;
+  background: url('../img/hola.jpg') center / cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 51, 160, 0.6), rgba(255, 102, 0, 0.4));
+  z-index: 0;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.banner-content h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* BOTÓN "Más información" */
+.btn-bcp {
+  display: inline-block;
+  background-color: #FF6600;
+  color: white;
+  font-weight: bold;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-bcp:hover {
+  background-color: #ff8533;
+  transform: scale(1.05);
+}
+
+/* SECCIÓN CONTENIDO */
+.contenido {
+  background-color: #fff;
+  padding: 120px 20px;
+}
+
+.contenido h3 {
+  font-size: 2rem;
+  color: #0033A0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contenido p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 1.6;
+  margin: 0 auto;
+  text-align: center;
+}
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* FOOTER */
+footer {
+  background: #0033A0;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}

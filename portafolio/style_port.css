@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fbfbfb;
+  margin: 45px;
+  text-align: center;
+}
+
+h2 {
+  color: #023979;
+  margin-bottom: 24px;
+}
+
+ul {
+  text-align: left;
+}
+
+.container-principal {
+  margin-top: 100px;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 15px;
+  width: 358px;
+  background: white;
+}
+
+.tarjeta img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 18px;
+}
+
+.tarjeta h3 {
+  color: #002b5c;
+}
+
+button {
+  background: #f29112;
+  color: #000;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 28px;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.bg-bcp {
+  background-color: #0033A0 !important;
+}

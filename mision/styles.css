@@ -1,0 +1,64 @@
+/* === Estilo general === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f5fb; /* Azul institucional BCP */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.bg-bcp {
+  background-color: #0033A0 !important;
+}
+
+/* === Sección Misión === */
+.mision {
+  text-align: center;
+  background-color: #ffffff;
+  color: #002f6c;
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 7rem;
+}
+
+/* Título principal */
+.mision h1 {
+  color: #0033a0;
+  font-size: 2.5em;
+  margin-bottom: 25px;
+}
+
+/* Imagen principal */
+.mision-img {
+  width: 60%;
+  max-width: 400px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Texto del párrafo */
+.mision p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Frase final */
+.frase {
+  font-style: italic;
+  font-size: 1.3em;
+  color: #ff6600; /* Naranja del BCP */
+  font-weight: bold;
+  margin-top: 15px;
+}

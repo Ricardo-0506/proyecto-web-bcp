@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visión BCP</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f3f5fb;
+      color: #1b1b1b;
+    }
+
+    /* ===== FOTO ARRIBA ===== */
+    .top-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      margin-top: 5.5em;
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #002b80;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #ff6b00;
+      /* naranja BCP */
+      margin: 10px 0;
+    }
+
+    header p {
+      font-size: 1.3em;
+    }
+
+    /* ===== SECCIÓN ===== */
+    section {
+      max-width: 900px;
+      margin: 30px auto 50px auto;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      position: relative;
+      z-index: 3;
+      text-align: center;
+    }
+
+    .bg-bcp {
+      background-color: #0033A0 !important;
+    }
+
+    section img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    section img:hover {
+      transform: scale(1.05);
+    }
+
+    section h2 {
+      color: #002b80;
+      border-left: 6px solid #ff6b00;
+      padding-left: 12px;
+      font-size: 1.8em;
+    }
+
+    section p {
+      line-height: 1.7;
+      font-size: 1.05em;
+      margin-top: 15px;
+    }
+
+    ul {
+      margin-top: 25px;
+      padding-left: 25px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    blockquote {
+      margin-top: 25px;
+      font-style: italic;
+      color: #002b80;
+      border-left: 5px solid #ff6b00;
+      padding-left: 15px;
+      font-size: 1.1em;
+      background: #f7f8fc;
+      border-radius: 8px;
+      padding: 15px;
+    }
+
+    footer {
+      background: #002b80;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      section {
+        margin: 20px 15px 30px 15px;
+        padding: 25px;
+      }
+
+      section img {
+        max-width: 100%;
+      }
+
+      .top-image {
+        max-height: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm bg-bcp">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index/index.html">BCP</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index/index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../portafolio/portafolio.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="../Vision/vision.html">Visión</a></li>
+          <li class="nav-item"><a class="nav-link" href="../mision/mision.html">Misión</a></li>
+          <li class="nav-item"><a class="nav-link" href="../contacto/formulario.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Visión BCP</h1>
+    <p>Innovando el futuro digital del Perú</p>
+  </header>
+
+  <section>
+    <!-- Foto dentro de la sección -->
+
+    <h2>Nuestra Visión</h2>
+    <p>
+      En <strong>BCP</strong> visualizamos un futuro donde las empresas y personas confían en soluciones
+      tecnológicas seguras, accesibles y de alto rendimiento para crecer. Buscamos ser el socio
+      tecnológico preferido en la transformación digital del país.
+    </p>
+
+    <ul>
+      <li><strong>Innovación continua:</strong> adoptamos tecnologías modernas y buenas prácticas.</li>
+      <li><strong>Escalabilidad:</strong> construimos sistemas preparados para crecer contigo.</li>
+      <li><strong>Seguridad:</strong> prioridad en la protección de datos y transacciones.</li>
+      <li><strong>Impacto positivo:</strong> experiencias centradas en las personas.</li>
+    </ul>
+
+    <blockquote>
+      “Ser referentes en soluciones digitales confiables, seguras y humanas.”
+    </blockquote>
+  </section>
+
+  <footer>
+    © 2025 Banco de Crédito del Perú — Todos los derechos reservados.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
