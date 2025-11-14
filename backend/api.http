@@ -1,0 +1,65 @@
+@baseUrl = http://localhost:3000
+
+//http://localhost:3000/api/services
+
+# Colección de pruebas para VS Code REST Client
+# Abre este archivo y usa "Send Request" arriba de cada bloque.
+
+### Ping root (diagnóstico)
+GET {{baseUrl}}/
+Accept: application/json
+
+### List services
+GET {{baseUrl}}/api/services
+Accept: application/json
+
+### Service details (ejemplo) - reemplaza ID por uno real si existe
+GET {{baseUrl}}/api/services/cuenta-ahorros-libre
+Accept: application/json
+
+### Statements - Misión
+GET {{baseUrl}}/api/statements/mission
+Accept: application/json
+
+### Statements - Visión
+GET {{baseUrl}}/api/statements/vision
+Accept: application/json
+
+### Form stats
+GET {{baseUrl}}/api/form-stats
+Accept: application/json
+
+### News
+GET {{baseUrl}}/api/news
+Accept: application/json
+
+### Crear contacto (válido)
+POST {{baseUrl}}/api/contact
+Content-Type: application/json
+
+{
+  "senderName": "Prueba REST",
+  "senderEmail": "rest@example.com",
+  "subject": "Consulta via REST Client",
+  "messageBody": "Mensaje de prueba desde REST Client"
+}
+
+### Crear contacto (inválido - falta campos) - espera 400
+POST {{baseUrl}}/api/contact
+Content-Type: application/json
+
+{
+  "senderName": "",
+  "senderEmail": "",
+  "subject": "",
+  "messageBody": ""
+}
+
+### Obtener mensajes de contacto
+GET {{baseUrl}}/api/contact/messages
+Accept: application/json
+
+### Prueba adicional: ruta no encontrada (ejemplo)
+GET {{baseUrl}}/api/services/nonexistent-id
+Accept: application/json
+
