@@ -1,4 +1,5 @@
 import { getDB } from '../config/db.js';
+import { ObjectId } from 'mongodb';
 
 export class ServiceModel {
     
@@ -16,11 +17,13 @@ export class ServiceModel {
     }
 
     // Método estático para obtener un servicio por su serviceId
-    static async findByServiceId(serviceId) {
+    static async findByServiceTerm(terms) {
         try {
             const db = getDB();
+            // Normaliza el término de búsqueda
+            const regex = new RegExp(terms, 'i');
             // Llama directamente al driver para la operación findOne()
-            const service = await db.collection('services').findOne({ serviceId: serviceId });
+            const service = await db.collection('services').findOne({ nombre: { $regex: regex } });
             return service;
         } catch (error) {
             console.error('Error en ServiceModel.findByServiceId:', error);
@@ -41,5 +44,33 @@ export class ServiceModel {
             throw new Error('Fallo al crear el servicio.');
         }
     }
-    
+
+    static async update(serviceId, updateData) {
+        try{
+            const db = getDB();
+            const objectId = new ObjectId(serviceId);
+            const result = await db.collection('services').updateOne(
+                { _id: objectId },
+                { $set: updateData }
+            );
+            return result.modifiedCount;
+        }catch(error){
+            console.error('Error en ServiceModel.update:', error);
+            throw new Error('Fallo al actualizar el servicio.');
+        }
+    }
+
+    static async delete(serviceId) {
+        try{
+            const db = getDB();
+            const objectId = new ObjectId(serviceId);
+            const result = await db.collection('services').deleteOne(
+                { _id: objectId }
+            );
+            return result.deletedCount;
+        }catch(error){
+            console.error('Error en ServiceModel.delete:', error);
+            throw new Error('Fallo al eliminar el servicio.');
+        }
+    }
 }
