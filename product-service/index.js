@@ -2,40 +2,33 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import { connectDB, disconnectDB } from '../shared-db-config/db.js';
-import routes from './routes/index.js';
+import routes from './routes/services.js';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-
 // Montar todas las rutas bajo /api
-app.use('/api', routes);
+app.use('/api/services', routes);
 
 // Endpoint simple que muestra las rutas disponibles (diagnóstico)
 app.get('/', (req, res) => {
   res.json({
     status: 'ok',
     available: [
-      '/api/services',
-      '/api/services/:id',
-      '/api/statements/:type',
-      '/api/form-stats',
-      '/api/news',
-      '/api/contact (POST)',
-      '/api/contact/messages (GET)'
+        '/api/services'
     ]
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Iniciar servidor y conectar a BD
 async function start() {
   try {
     await connectDB();
     app.listen(PORT, () => {
-      console.log(`Backend principal is running on http://localhost:${PORT}`);
+      console.log(`product-service is running on http://localhost:${PORT}`);
     });
   } catch (error) {
     console.error('Error al iniciar el servidor:', error);

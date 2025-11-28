@@ -1,4 +1,4 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
+  import { MongoClient, ServerApiVersion } from 'mongodb';
 
 const uri = process.env.URL;
 const DB_NAME = process.env.DB_NAME || 'bcp_web';

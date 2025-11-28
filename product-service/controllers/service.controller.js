@@ -1,4 +1,4 @@
-import { ServiceModel } from '../models/index.js'; 
+import { ServiceModel } from '../models/services.js'; 
 
 /**
  * Obtiene todos los servicios disponibles.
@@ -72,14 +72,23 @@ export async function createService(req, res) {
     }
 }
 
+/**
+ * actualiza un servicio existente.
+ */
+
 export async function updateService(req, res) {
     const serviceId = req.params.id;
     const updateData = req.body;
     
     try{
-        const modifiedCount = await ServiceModel.update(serviceId, updateData);
-        if(modifiedCount === 0){
+        const {modifiedCount, matchedCount} = await ServiceModel.update(serviceId, updateData);
+
+        if(matchedCount === 0){
             return res.status(404).json({ message: `Servicio con nombre ${serviceId} no encontrado.` });
+        }
+
+        if(modifiedCount === 0){
+            return res.status(200).json({ message: `El servicio ya contiene esa información, no se requiere actualización.` });
         }
         res.status(200).json({ message: 'Servicio actualizado exitosamente.' });
     }catch(error){
@@ -87,6 +96,10 @@ export async function updateService(req, res) {
         res.status(500).json({ message: 'Error interno al actualizar el servicio.' });
     }
 }
+
+/**
+ * Elimina un servicio por su ID.
+ */
 
 export async function deleteService(req, res) {
     const serviceId = req.params.id;

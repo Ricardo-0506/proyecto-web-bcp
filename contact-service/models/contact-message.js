@@ -1,4 +1,4 @@
-import { getDB } from '../config/db.js';
+import { getDB } from '../../shared-db-config/db.js';
 
 export class ContactMessageModel {
     static COLLECTION_NAME = 'contact_messages';

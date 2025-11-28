@@ -1,0 +1,28 @@
+@baseUrl=http://localhost:3002
+
+### Crear contacto (válido)
+POST {{baseUrl}}/api/contact
+Content-Type: application/json
+
+{
+  "senderName": "Prueba REST ULTIMO",
+  "senderEmail": "rest@example.com",
+  "subject": "Consulta via REST Client",
+  "messageBody": "Mensaje de prueba desde REST Client"
+}
+
+### Crear contacto (inválido - falta campos) - espera 400
+
+POST {{baseUrl}}/api/contact
+Content-Type: application/json
+
+{
+  "senderName": "",
+  "senderEmail": "",
+  "subject": "",
+  "messageBody": ""
+}
+
+### Obtener mensajes de contacto
+GET {{baseUrl}}/api/contact/messages
+Accept: application/json

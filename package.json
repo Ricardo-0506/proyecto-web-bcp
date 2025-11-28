@@ -6,10 +6,13 @@
   "private": true,
   "workspaces": [
     "backend",
-    "frontend"
+    "frontend",
+    "product-service",
+    "contact-service",
+    "api-gateway"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\" \"npm run dev --workspace=product-service\" \"npm run dev --workspace=api-gateway\" \"npm run dev --workspace=contact-service\"",
     "start": "concurrently \"npm start --workspace=backend\" \"npm start --workspace=frontend\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

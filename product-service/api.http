@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:3001
+
+### List services
+
+GET {{baseUrl}}/api/services
+Accept: application/json
+
+### Service details (ejemplo)
+GET {{baseUrl}}/api/services/search?q=Visa+platinum
+Accept: application/json
+
+### Create Service (válido)
+POST {{baseUrl}}/api/services
+Content-Type: application/json
+
+{
+  "nombre": "Servicio de Prueba REST",
+  "membresia": 300,
+  "descripcion": "Descripción del servicio de prueba creado vía REST Client"
+}
+
+### 2. Actualizar Parcialmente Servicio (PATCH)
+# PATCH /api/:id
+PATCH {{baseUrl}}/api/services/6929117dc4da271c946bb4db
+Content-Type: application/json
+
+{
+  "membresia": 550,
+  "descripcion": "Descripción actualizada para la prueba."
+}
+
+### 3. Eliminar Servicio (DELETE)
+# DELETE /api/:id
+DELETE {{baseUrl}}/api/services/6929117dc4da271c946bb4db
+Accept: application/json

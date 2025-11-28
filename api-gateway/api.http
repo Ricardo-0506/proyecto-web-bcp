@@ -1,0 +1,65 @@
+@baseUrl = http://localhost:4000/api-gateway
+
+### List products
+GET {{baseUrl}}/products
+Accept: application/json    
+
+### Product details (ejemplo)
+GET {{baseUrl}}/products/search?q=Visa+Platinum
+Accept: application/json
+
+### Create Product (válido)
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "nombre": "Producto de Prueba REST",
+  "membresia": 200,
+  "descripcion": "Descripción del producto de prueba creado vía REST Client"
+}
+
+### 2. Actualizar Parcialmente Producto (PATCH)
+# PATCH /api/:id
+PATCH {{baseUrl}}/products/69291869ccc8aca782c6d993
+Content-Type: application/json
+
+{
+  "precio": 2000,
+  "descripcion": "Descripción actualizada para la prueba."
+}
+
+### 3. Eliminar Producto (DELETE)
+# DELETE /api/:id
+DELETE {{baseUrl}}/products/69291869ccc8aca782c6d993
+Accept: application/json
+
+
+
+####
+
+### Contact Service - Get All Contact Messages
+GET {{baseUrl}}/contacts
+Accept: application/json
+
+### Contact Service - Create Contact Message (valid)
+POST {{baseUrl}}/contacts
+Content-Type: application/json
+
+{
+  "senderName": "Prueba REST GATEWAY",
+  "senderEmail": "rest@example.com",
+  "subject": "Consulta via REST Client",
+  "messageBody": "Mensaje de prueba desde REST Client"
+}
+
+
+### Contact Service - Create Contact Message (invalid - missing fields) - expect 400
+POST {{baseUrl}}/contacts
+Content-Type: application/json
+
+{
+  "senderName": "",
+  "senderEmail": "",
+  "subject": "",
+  "messageBody": ""
+}

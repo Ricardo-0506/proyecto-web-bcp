@@ -1,24 +1,23 @@
-import { ContactMessageModel, FormStatsModel } from '../models/index.js'; // Importamos ambos modelos
+import { ContactMessageModel } from '../models/contact-message.js';
 
 
 export async function postContactMessage(req, res) {
     
-        const contactData = { senderName, senderEmail, subject, messageBody };
-
         // Validación simple de datos de entrada
         const { senderName, senderEmail, subject, messageBody } = req.body;
+
+        const contactData = { senderName, senderEmail, subject, messageBody };
+
         if (!senderName || !senderEmail || !subject || !messageBody) {
             return res.status(400).json({ message: 'Todos los campos son requeridos.' });
         }
+
         
     try {
         // 1. Guardar el mensaje en la colección 'contact_messages'
         await ContactMessageModel.create(contactData);
 
-        // 2. Actualizar el contador en la colección 'form_submissions_stats'
-        await FormStatsModel.incrementTotalSubmissions();
-
-        // 3. Respuesta exitosa
+        // 2. Respuesta exitosa
         res.status(201).json({ message: '¡Gracias! Su mensaje ha sido enviado con éxito.' });
 
     } catch (error) {

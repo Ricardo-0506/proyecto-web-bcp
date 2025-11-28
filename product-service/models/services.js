@@ -1,4 +1,4 @@
-import { getDB } from '../config/db.js';
+import { getDB } from '../../shared-db-config/db.js';
 import { ObjectId } from 'mongodb';
 
 export class ServiceModel {
@@ -53,7 +53,10 @@ export class ServiceModel {
                 { _id: objectId },
                 { $set: updateData }
             );
-            return result.modifiedCount;
+            return {
+                modifiedCount: result.modifiedCount,
+                matchedCount: result.matchedCount
+            };
         }catch(error){
             console.error('Error en ServiceModel.update:', error);
             throw new Error('Fallo al actualizar el servicio.');
