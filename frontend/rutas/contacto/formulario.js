@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const formulario = document.getElementById('form-contacto');
     
     
-    const BASE_URL = 'http://localhost:3000'; 
+    const BASE_URL = 'http://localhost:4000/api-gateway/contacts'; 
 
 
     formulario.addEventListener('submit', function(e) {
@@ -96,7 +96,7 @@ function mostrarMensajeExito(mensajeTexto) {
 
 async function enviarDatos(data, baseUrl) {
     
-    const URL_ENDPOINT = `${baseUrl}/api/contact`; 
+    const URL_ENDPOINT = `${baseUrl}`; 
     const formulario = document.getElementById('form-contacto');
 
     try {

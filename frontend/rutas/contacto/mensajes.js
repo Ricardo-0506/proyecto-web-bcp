@@ -3,8 +3,8 @@
 
 async function cargarMensajes() {
     // Configuración
-    const BASE_URL = 'http://localhost:3000';
-    const URL_ENDPOINT = `${BASE_URL}/api/contact/messages`;
+    const BASE_URL = 'http://localhost:4000/api-gateway';
+    const URL_ENDPOINT = `${BASE_URL}/contacts`;
     const contenedor = document.getElementById('mensajes-container');
 
     if (!contenedor) return;
