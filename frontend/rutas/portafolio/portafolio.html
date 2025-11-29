@@ -36,6 +36,47 @@
     <div class="tarjetas" id="tarjetas-container">
 
     </div>
+    
+    <!-- Buscador y formulario rápido para CRUD desde frontend -->
+    <div class="mt-4">
+      <div class="input-group mb-3">
+        <input id="search-input" type="search" class="form-control" placeholder="Buscar servicios por término...">
+        <button id="search-clear" class="btn btn-outline-secondary" type="button">Limpiar</button>
+      </div>
+
+      <details>
+        <summary class="btn btn-sm btn-primary mb-2">Crear nuevo servicio</summary>
+        <form id="service-form" class="card card-body">
+          <div class="mb-2">
+            <label class="form-label">Nombre</label>
+            <input name="nombre" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Imagen (URL)</label>
+            <input name="imagen" class="form-control">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Membresía</label>
+            <input name="membresia" class="form-control">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Millas de bienvenida</label>
+            <input name="millasWelc" class="form-control">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Descripción</label>
+            <textarea name="descripcion" class="form-control" rows="2"></textarea>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Beneficios (una línea por beneficio)</label>
+            <textarea name="beneficios" class="form-control" rows="3" placeholder="Beneficio 1\nBeneficio 2"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-success">Crear servicio</button>
+          </div>
+        </form>
+      </details>
+    </div>
   </div>
   
   <footer class="text-center mt-5 py-3 bg-light">

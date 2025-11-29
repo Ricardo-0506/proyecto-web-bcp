@@ -20,7 +20,7 @@ Content-Type: application/json
 
 ### 2. Actualizar Parcialmente Producto (PATCH)
 # PATCH /api/:id
-PATCH {{baseUrl}}/products/69291869ccc8aca782c6d993
+PATCH {{baseUrl}}/products/692a4cf6298d8d917b3f9ba1
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 
 ### 3. Eliminar Producto (DELETE)
 # DELETE /api/:id
-DELETE {{baseUrl}}/products/69291869ccc8aca782c6d993
+DELETE {{baseUrl}}/products/692a4cf6298d8d917b3f9ba1
 Accept: application/json
 
 
@@ -58,8 +58,8 @@ POST {{baseUrl}}/contacts
 Content-Type: application/json
 
 {
-  "senderName": "",
-  "senderEmail": "",
+  "senderName": "Daniel",
+  "senderEmail": "dn@gmail.com",
   "subject": "",
-  "messageBody": ""
+  "messageBody": "Hola"
 }
