@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-const PRODUCT_SERVICE_URL = 'http://localhost:3001/api/services';
+const PRODUCT_SERVICE_URL = 'http://product-service:3001/api/services';
 
 export async function getAllProducts(req, res) {
     try {

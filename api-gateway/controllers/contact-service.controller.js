@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-const CONTACT_SERVICE_URL = 'http://localhost:3002/api/contacts';
+const CONTACT_SERVICE_URL = 'http://contact-service:3002/api/contacts';
 
 export async function postContactMessage(req, res) {
     const { senderName, senderEmail, subject, messageBody } = req.body;

@@ -1,0 +1,64 @@
+services:
+  api-gateway:
+    build:
+      # CORREGIDO: Usamos la raíz del proyecto como contexto de construcción
+      context: . 
+      # Indicamos dónde está el Dockerfile dentro de ese contexto
+      dockerfile: ./api-gateway/Dockerfile 
+    ports:
+      - "4000:4000"
+    depends_on:
+      - backend
+      - contact-service
+      - product-service
+      - shared-db
+
+  backend:
+    build:
+      # CORREGIDO: Usamos la raíz del proyecto como contexto de construcción
+      context: .
+      dockerfile: ./backend/Dockerfile 
+    ports:
+      - "3000:3000"
+    depends_on:
+      - shared-db
+
+  contact-service:
+    build:
+      # CORREGIDO: Usamos la raíz del proyecto como contexto de construcción
+      context: .
+      dockerfile: ./contact-service/Dockerfile
+    ports:
+      - "3002:3002"
+    depends_on:
+      - shared-db
+
+  product-service:
+    build:
+      # CORREGIDO: Usamos la raíz del proyecto como contexto de construcción
+      context: .
+      dockerfile: ./product-service/Dockerfile
+    ports:
+      - "3001:3001"
+    depends_on:
+      - shared-db
+
+  shared-db:
+    image: mongo:6
+    container_name: shared-db
+    ports:
+      - "27017:27017"
+
+  frontend:
+    build:
+      # Este puede seguir apuntando a su subdirectorio si no necesita el código compartido
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    command: npm run dev
+    volumes:
+      # Mantienes el montaje de volumen para desarrollo
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - api-gateway
